@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Log Creator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Dev Log Creator</h1>
+            <p class="date">📅 <span id="currentDate"></span></p>
+            
+            <!-- Settings bar -->
+            <div class="settings-bar">
+                <div class="folder-selector">
+                    <span class="folder-icon">📁</span>
+                    <span id="currentPath">Loading...</span>
+                    <button type="button" id="changeFolderBtn" class="btn-folder">
+                        Change Folder
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <form id="devLogForm">
+                <div class="form-group">
+                    <label for="objectives">
+                        <span class="icon">🎯</span>
+                        Today's Objectives
+                    </label>
+                    <textarea id="objectives" name="objectives" placeholder="What were your objectives for today?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="workDone">
+                        <span class="icon">✅</span>
+                        Work Completed
+                    </label>
+                    <textarea id="workDone" name="workDone" placeholder="What did you accomplish today?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="problems">
+                        <span class="icon">❗</span>
+                        Problems Encountered
+                    </label>
+                    <textarea id="problems" name="problems" placeholder="What problems did you encounter?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="solutions">
+                        <span class="icon">💡</span>
+                        Solutions Found
+                    </label>
+                    <textarea id="solutions" name="solutions" placeholder="What solutions did you find?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="tomorrow">
+                        <span class="icon">📋</span>
+                        Tomorrow's Tasks
+                    </label>
+                    <textarea id="tomorrow" name="tomorrow" placeholder="What do you plan to do tomorrow?"></textarea>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" id="clearBtn" class="btn-secondary">
+                        🗑️ Clear
+                    </button>
+                    <button type="submit" id="submitBtn" class="btn-primary">
+                        ✨ Create Dev Log
+                    </button>
+                </div>
+            </form>
+        </main>
+
+        <div id="notification" class="notification"></div>
+        
+        <div class="shortcuts">
+            <p><strong>Shortcuts:</strong> Ctrl+Enter to submit • Ctrl+R to clear</p>
+        </div>
+    </div>
+
+    <script src="renderer-en.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "name": "dev-log-creator-en",
+  "version": "1.0.0",
+  "description": "Desktop application for creating dev logs with graphical interface",
+  "main": "app/main-en.js",
+  "scripts": {
+    "start": "electron app/main-en.js",
+    "dev": "electron app/main-en.js --dev",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win"
+  },
+  "keywords": ["dev-log", "productivity", "documentation", "journal", "electron"],
+  "dependencies": {
+    "electron": "^25.0.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.dylan.devlogcreator.en",
+    "productName": "Dev Log Creator EN",
+    "directories": {
+      "output": "dist-en"
+    },
+    "files": [
+      "app/**/*",
+      "src/**/*",
+      "package-en.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "app/assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "author": "Dylan",
+  "license": "MIT"
+}

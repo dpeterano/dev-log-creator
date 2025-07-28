@@ -1,0 +1,50 @@
+{
+  "name": "dev-log-creator",
+  "version": "1.0.0",
+  "description": "Application de création de dev logs avec interface graphique",
+  "main": "app/main.js",
+  "scripts": {
+    "start": "electron .",
+    "start-en": "electron app/main-en.js",
+    "select-language": "electron app/language-selector.js",
+    "dev": "electron . --dev",
+    "dev-en": "electron app/main-en.js --dev",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win",
+    "pack": "electron-packager . dev-log-creator --platform=win32 --arch=x64 --out=build/ --overwrite",
+    "pack-en": "electron-packager . dev-log-creator-en --platform=win32 --arch=x64 --out=build/ --overwrite --main=app/main-en.js",
+    "build-en": "electron-builder --config.main=app/main-en.js",
+    "build-win-en": "electron-builder --win --config.main=app/main-en.js",
+    "console": "node src/index.js",
+    "log": "node src/index.js"
+  },
+  "keywords": [
+    "dev-log",
+    "productivity",
+    "documentation",
+    "journal",
+    "electron"
+  ],
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^24.0.0",
+    "electron-packager": "^17.1.2"
+  },
+  "build": {
+    "appId": "com.dylan.devlogcreator",
+    "productName": "Dev Log Creator",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "app/**/*",
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "portable"
+    }
+  },
+  "author": "Dylan",
+  "license": "MIT"
+}
