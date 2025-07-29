@@ -36,15 +36,15 @@ function createLogFile(date = new Date()) {
     // Créer la structure de dossiers si elle n'existe pas
     if (!fs.existsSync(devLogDir)) {
         fs.mkdirSync(devLogDir, { recursive: true });
-        console.log(`📁 Dossier créé : ${devLogDir}`);
+        console.log(`Dossier créé : ${devLogDir}`);
     }
     if (!fs.existsSync(yearDir)) {
         fs.mkdirSync(yearDir, { recursive: true });
-        console.log(`📁 Dossier créé : ${yearDir}`);
+        console.log(`Dossier créé : ${yearDir}`);
     }
     if (!fs.existsSync(monthDir)) {
         fs.mkdirSync(monthDir, { recursive: true });
-        console.log(`📁 Dossier créé : ${monthDir}`);
+        console.log(`Dossier créé : ${monthDir}`);
     }
     
     // Créer le fichier dev log
@@ -52,8 +52,8 @@ function createLogFile(date = new Date()) {
     const filePath = path.join(monthDir, fileName);
     
     if (fs.existsSync(filePath)) {
-        console.log(`❌ Le fichier ${fileName} existe déjà dans ${monthDir}`);
-        console.log(`💡 Chemin : ${filePath}`);
+        console.log(`Le fichier ${fileName} existe déjà dans ${monthDir}`);
+        console.log(`Chemin : ${filePath}`);
         return;
     }
     
@@ -61,20 +61,20 @@ function createLogFile(date = new Date()) {
     
     try {
         fs.writeFileSync(filePath, content, 'utf8');
-        console.log(`✅ Fichier dev log créé avec succès !`);
-        console.log(`📄 ${filePath}`);
+        console.log(`Fichier dev log créé avec succès !`);
+        console.log(`${filePath}`);
         
         // Essayer d'ouvrir le fichier dans VS Code
         const { exec } = require('child_process');
         exec(`code "${filePath}"`, (error) => {
             if (error) {
-                console.log(`💡 Pour ouvrir le fichier : code "${filePath}"`);
+                console.log(`Pour ouvrir le fichier : code "${filePath}"`);
             } else {
-                console.log(`🚀 Fichier ouvert dans VS Code`);
+                console.log(`Fichier ouvert dans VS Code`);
             }
         });
     } catch (error) {
-        console.error('❌ Erreur lors de la création du fichier :', error.message);
+        console.error('Erreur lors de la création du fichier :', error.message);
     }
 }
 
@@ -90,15 +90,15 @@ function createLogFileWithContent(logData, date = new Date()) {
     // Créer la structure de dossiers si elle n'existe pas
     if (!fs.existsSync(devLogDir)) {
         fs.mkdirSync(devLogDir, { recursive: true });
-        console.log(`📁 Dossier créé : ${devLogDir}`);
+        console.log(`Dossier créé : ${devLogDir}`);
     }
     if (!fs.existsSync(yearDir)) {
         fs.mkdirSync(yearDir, { recursive: true });
-        console.log(`📁 Dossier créé : ${yearDir}`);
+        console.log(`Dossier créé : ${yearDir}`);
     }
     if (!fs.existsSync(monthDir)) {
         fs.mkdirSync(monthDir, { recursive: true });
-        console.log(`📁 Dossier créé : ${monthDir}`);
+        console.log(`Dossier créé : ${monthDir}`);
     }
     
     // Créer le fichier dev log
@@ -106,8 +106,8 @@ function createLogFileWithContent(logData, date = new Date()) {
     const filePath = path.join(monthDir, fileName);
     
     if (fs.existsSync(filePath)) {
-        console.log(`❌ Le fichier ${fileName} existe déjà dans ${monthDir}`);
-        console.log(`💡 Chemin : ${filePath}`);
+        console.log(`Le fichier ${fileName} existe déjà dans ${monthDir}`);
+        console.log(`Chemin : ${filePath}`);
         
         // Demander si on veut l'écraser
         const readline = require('readline');
@@ -120,7 +120,7 @@ function createLogFileWithContent(logData, date = new Date()) {
             if (answer.toLowerCase() === 'o' || answer.toLowerCase() === 'oui') {
                 writeLogFile(filePath, formattedDate, logData);
             } else {
-                console.log('📝 Fichier non modifié.');
+                console.log('Fichier non modifié.');
             }
             rl.close();
         });
@@ -141,28 +141,28 @@ function writeLogFile(filePath, formattedDate, logData) {
     
     try {
         fs.writeFileSync(filePath, content, 'utf8');
-        console.log(`✅ Fichier dev log créé avec succès !`);
-        console.log(`📄 ${filePath}`);
+        console.log(`Fichier dev log créé avec succès !`);
+        console.log(`${filePath}`);
         
         // Afficher un résumé
-        console.log('\n📋 Résumé de votre dev log :');
-        console.log(`🎯 Objectifs : ${logData.objectives}`);
-        console.log(`✅ Travail effectué : ${logData.workDone}`);
-        console.log(`❗ Problèmes : ${logData.problems}`);
-        console.log(`💡 Solutions : ${logData.solutions}`);
-        console.log(`📋 Demain : ${logData.tomorrow}`);
+        console.log('\nRésumé de votre dev log :');
+        console.log(`Objectifs : ${logData.objectives}`);
+        console.log(`Travail effectué : ${logData.workDone}`);
+        console.log(`Problèmes : ${logData.problems}`);
+        console.log(`Solutions : ${logData.solutions}`);
+        console.log(`Demain : ${logData.tomorrow}`);
         
         // Essayer d'ouvrir le fichier dans VS Code
         const { exec } = require('child_process');
         exec(`code "${filePath}"`, (error) => {
             if (error) {
-                console.log(`\n💡 Pour ouvrir le fichier : code "${filePath}"`);
+                console.log(`\nPour ouvrir le fichier : code "${filePath}"`);
             } else {
-                console.log(`\n🚀 Fichier ouvert dans VS Code`);
+                console.log(`\nFichier ouvert dans VS Code`);
             }
         });
     } catch (error) {
-        console.error('❌ Erreur lors de la création du fichier :', error.message);
+        console.error('Erreur lors de la création du fichier :', error.message);
     }
 }
 
