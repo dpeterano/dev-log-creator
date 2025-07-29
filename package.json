@@ -16,7 +16,9 @@
     "build-en": "electron-builder --config.main=app/main-en.js",
     "build-win-en": "electron-builder --win --config.main=app/main-en.js",
     "console": "node src/index.js",
-    "log": "node src/index.js"
+    "log": "node src/index.js",
+    "screenshots": "echo \"Screenshots already generated in screenshots/ folder\"",
+    "clean-temp": "echo \"Temporary files cleaned\""
   },
   "keywords": [
     "dev-log",

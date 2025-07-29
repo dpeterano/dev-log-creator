@@ -1,52 +1,129 @@
-# 🚀 Dev Log Creator - Application Desktop
+# 🚀 Dev Log Creator
 
-Une application desktop moderne pour créer automatiquement vos dev logs quotidiens avec une interface graphique intuitive.
+> Application desktop moderne pour créer vos dev logs quotidiens avec une interface graphique intuitive.
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Electron](https://img.shields.io/badge/Electron-25.0.0-47848f.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
+## 📸 Aperçu
+
+### Interface principale (Français)
+![Interface Française](screenshots/french-interface.png)
+
+### Interface principale (English)
+![Interface Anglaise](screenshots/english-interface.png)
+
+### Sélecteur de langue
+![Sélecteur de langue](screenshots/language-selector.png)
 
 ## ✨ Fonctionnalités
 
-- **Interface graphique moderne** avec design gradient
-- **5 champs de saisie** pour structurer votre journée
-- **Sélecteur de dossier personnalisé** - Choisissez où stocker vos dev logs
-- **Création automatique** de la structure de dossiers (dossier-choisi/dev-log/YYYY/MM/)
-- **Template pré-rempli** avec vos réponses
-- **Gestion des doublons** avec confirmation
-- **Ouverture automatique** dans VS Code
-- **Raccourcis clavier** (Ctrl+Enter pour valider, Ctrl+R pour effacer)
-- **Notifications visuelles** de succès/erreur
-- **Sauvegarde des préférences** - Vos paramètres sont mémorisés
+- 🎨 **Interface moderne** avec design gradient
+- 🌍 **Support bilingue** (Français/Anglais)
+- 📁 **Sélecteur de dossier** personnalisé
+- 📝 **5 champs structurés** pour votre journée
+- 🔄 **Création automatique** de la structure de dossiers
+- 💾 **Sauvegarde des préférences**
+- 🚀 **Ouverture automatique** dans VS Code
+- ⌨️ **Raccourcis clavier** (Ctrl+Enter, Ctrl+R)
 
-## 🎯 Les 5 champs de l'interface
-
-1. **🎯 Objectifs du jour** - Vos objectifs de la journée
-2. **✅ Travail effectué** - Ce que vous avez accompli
-3. **❗ Problèmes rencontrés** - Les difficultés rencontrées
-4. **💡 Solutions trouvées** - Comment vous avez résolu les problèmes
-5. **📋 À faire demain** - Vos plans pour le lendemain
-
-## 🚀 Installation et utilisation
-
-### Option 1: Utiliser l'application (Mode GUI)
+## 🚀 Installation
 
 ```bash
+# Cloner le projet
+git clone https://github.com/dpeterano/dev-log-creator.git
+cd dev-log-creator
+
 # Installer les dépendances
 npm install
-
-# Sélecteur de langue (Français/English)
-npm run select-language
-
-# Lancer l'application graphique (Français)
-npm start
-
-# Lancer la version anglaise
-npm run start-en
 ```
 
-### Option 2: Mode console (ancien)
+## 📱 Utilisation
+
+### Interface graphique
+```bash
+npm start        # Interface française
+npm run start-en # Interface anglaise
+```
+
+### Exécutables pré-compilés
+```bash
+# Windows - Version française
+.\Lancer-Version-Francaise.bat
+
+# Windows - Version anglaise
+.\Launch-English-Version.bat
+```
+
+### Mode console (ancien)
+```bash
+npm run console  # Interface en ligne de commande
+```
+
+## 📂 Structure générée
+
+```
+[Votre Dossier]/
+└── dev-log/
+    └── 2025/
+        └── 07/
+            └── 2025-07-28.md
+```
+
+## 📝 Template généré
+
+```markdown
+# Dev Log - 2025-07-28
+
+## Objectifs du jour
+- Vos objectifs ici
+
+## Travail effectué  
+- Ce que vous avez accompli
+
+## Problèmes rencontrés
+- Difficultés rencontrées
+
+## Solutions trouvées
+- Solutions apportées
+
+## À faire demain
+- Plans pour demain
+
+## Notes
+- Notes supplémentaires
+```
+
+## 🛠️ Développement
 
 ```bash
-# Utiliser l'interface en ligne de commande
-npm run console
+# Mode développement (avec DevTools)
+npm run dev        # Français
+npm run dev-en     # Anglais
+
+# Construire l'exécutable
+npm run pack       # Version française
+npm run pack-en    # Version anglaise
 ```
+
+## ⌨️ Raccourcis
+
+- **Ctrl + Enter** : Créer le dev log
+- **Ctrl + R** : Effacer tous les champs
+
+## 🌍 Support linguistique
+
+- **Français** : Version par défaut
+- **English** : Fonctionnalités complètes
+
+## 📄 License
+
+MIT - Voir [LICENSE](LICENSE) pour plus de détails.
+
+---
+
+⭐ **Ce projet vous aide ?** N'hésitez pas à lui donner une étoile !
 
 ## 📦 Générer un fichier .exe
 
