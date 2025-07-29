@@ -12,7 +12,7 @@
     "build": "electron-builder",
     "build-win": "electron-builder --win",
     "pack": "electron-packager . dev-log-creator --platform=win32 --arch=x64 --out=build/ --overwrite",
-    "pack-en": "electron-packager . dev-log-creator-en --platform=win32 --arch=x64 --out=build/ --overwrite --main=app/main-en.js",
+    "pack-en": "node build-english.js",
     "build-en": "electron-builder --config.main=app/main-en.js",
     "build-win-en": "electron-builder --win --config.main=app/main-en.js",
     "console": "node src/index.js",

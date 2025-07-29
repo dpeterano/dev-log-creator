@@ -7,10 +7,10 @@ const SettingsManager = require('./settingsManager');
 
 const settings = new SettingsManager();
 
-console.log('🚀 Créateur de Dev Log Interactif');
+console.log('Créateur de Dev Log Interactif');
 console.log('==================================');
-console.log(`📅 Date du jour : ${getFormattedDate()}`);
-console.log(`📁 Dossier de destination : ${settings.getDevLogPath()}`);
+console.log(`Date du jour : ${getFormattedDate()}`);
+console.log(`Dossier de destination : ${settings.getDevLogPath()}`);
 console.log('');
 
 // Interface interactive
@@ -36,15 +36,15 @@ function askQuestion(question, key, callback) {
 }
 
 function collectLogData() {
-    console.log('📝 Remplissez les informations pour votre dev log :');
+    console.log('Remplissez les informations pour votre dev log :');
     console.log('   (Appuyez sur Entrée pour laisser vide)\n');
 
-    askQuestion('🎯 Quels étaient vos objectifs pour aujourd\'hui ? ', 'objectives', () => {
-        askQuestion('✅ Qu\'avez-vous accompli aujourd\'hui ? ', 'workDone', () => {
-            askQuestion('❗ Quels problèmes avez-vous rencontrés ? ', 'problems', () => {
-                askQuestion('💡 Quelles solutions avez-vous trouvées ? ', 'solutions', () => {
-                    askQuestion('📋 Que prévoyez-vous de faire demain ? ', 'tomorrow', () => {
-                        console.log('\n🎉 Merci ! Création du fichier en cours...\n');
+    askQuestion('Quels étaient vos objectifs pour aujourd\'hui ? ', 'objectives', () => {
+        askQuestion('Qu\'avez-vous accompli aujourd\'hui ? ', 'workDone', () => {
+            askQuestion('Quels problèmes avez-vous rencontrés ? ', 'problems', () => {
+                askQuestion('Quelles solutions avez-vous trouvées ? ', 'solutions', () => {
+                    askQuestion('Que prévoyez-vous de faire demain ? ', 'tomorrow', () => {
+                        console.log('\nMerci ! Création du fichier en cours...\n');
                         createLogFileWithContent(logData);
                         rl.close();
                     });
@@ -60,7 +60,7 @@ function askUserAction() {
             console.log('');
             collectLogData();
         } else {
-            console.log('👋 À bientôt !');
+            console.log('À bientôt !');
             rl.close();
         }
     });

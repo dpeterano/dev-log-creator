@@ -63,7 +63,7 @@ form.addEventListener('submit', async (e) => {
     
     // Désactiver le bouton pendant le traitement
     createBtn.disabled = true;
-    createBtn.innerHTML = '⏳ Création en cours...';
+    createBtn.innerHTML = 'Création en cours...';
     
     try {
         const result = await ipcRenderer.invoke('create-dev-log', logData);
@@ -74,7 +74,7 @@ form.addEventListener('submit', async (e) => {
             // Afficher un bouton pour ouvrir le dossier
             setTimeout(() => {
                 const openFolderBtn = document.createElement('button');
-                openFolderBtn.textContent = '📁 Ouvrir le dossier';
+                openFolderBtn.textContent = 'Ouvrir le dossier';
                 openFolderBtn.className = 'btn btn-secondary';
                 openFolderBtn.onclick = () => {
                     ipcRenderer.invoke('open-file-location', result.filePath);
@@ -96,7 +96,7 @@ form.addEventListener('submit', async (e) => {
     } finally {
         // Réactiver le bouton
         createBtn.disabled = false;
-        createBtn.innerHTML = '📝 Créer le Dev Log';
+        createBtn.innerHTML = 'Créer le Dev Log';
     }
 });
 

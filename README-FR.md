@@ -1,4 +1,4 @@
-# 🚀 Dev Log Creator
+# Dev Log Creator
 
 > Application desktop moderne pour créer vos dev logs quotidiens avec une interface graphique intuitive.
 
@@ -6,7 +6,7 @@
 ![Electron](https://img.shields.io/badge/Electron-25.0.0-47848f.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## 📸 Aperçu
+## Aperçu
 
 ### Interface principale (Français)
 ![Interface Française](screenshots/french-interface.png)
@@ -17,18 +17,18 @@
 ### Sélecteur de langue
 ![Sélecteur de langue](screenshots/language-selector.png)
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-- 🎨 **Interface moderne** avec design gradient
-- 🌍 **Support bilingue** (Français/Anglais)
-- 📁 **Sélecteur de dossier** personnalisé
-- 📝 **5 champs structurés** pour votre journée
-- 🔄 **Création automatique** de la structure de dossiers
-- 💾 **Sauvegarde des préférences**
-- 🚀 **Ouverture automatique** dans VS Code
-- ⌨️ **Raccourcis clavier** (Ctrl+Enter, Ctrl+R)
+- **Interface moderne** avec design gradient
+- **Support bilingue** (Français/Anglais)
+- **Sélecteur de dossier** personnalisé
+- **5 champs structurés** pour votre journée
+- **Création automatique** de la structure de dossiers
+- **Sauvegarde des préférences**
+- **Ouverture automatique** dans VS Code
+- **Raccourcis clavier** (Ctrl+Enter, Ctrl+R)
 
-## 🚀 Installation
+## Installation
 
 ```bash
 # Cloner le projet
@@ -39,7 +39,7 @@ cd dev-log-creator
 npm install
 ```
 
-## 📱 Utilisation
+## Utilisation
 
 ### Interface graphique
 ```bash
@@ -61,7 +61,7 @@ npm run start-en # Interface anglaise
 npm run console  # Interface en ligne de commande
 ```
 
-## 📂 Structure générée
+## Structure générée
 
 ```
 [Votre Dossier]/
@@ -71,7 +71,7 @@ npm run console  # Interface en ligne de commande
             └── 2025-07-28.md
 ```
 
-## 📝 Template généré
+## Template généré
 
 ```markdown
 # Dev Log - 2025-07-28
@@ -95,7 +95,7 @@ npm run console  # Interface en ligne de commande
 - Notes supplémentaires
 ```
 
-## 🛠️ Développement
+## Développement
 
 ```bash
 # Mode développement (avec DevTools)
@@ -107,23 +107,23 @@ npm run pack       # Version française
 npm run pack-en    # Version anglaise
 ```
 
-## ⌨️ Raccourcis
+## Raccourcis
 
 - **Ctrl + Enter** : Créer le dev log
 - **Ctrl + R** : Effacer tous les champs
 
-## 🌍 Support linguistique
+## Support linguistique
 
 - **Français** : Version par défaut
 - **English** : Fonctionnalités complètes
 
-## 📄 License
+## License
 
 MIT - Voir [LICENSE](LICENSE) pour plus de détails.
 
 ---
 
-⭐ **Ce projet vous aide ?** N'hésitez pas à lui donner une étoile !
+**Ce projet vous aide ?** N'hésitez pas à lui donner une étoile !
 
 ## 📦 Générer un fichier .exe
 

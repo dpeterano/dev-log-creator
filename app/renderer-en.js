@@ -2,7 +2,7 @@ const { ipcRenderer } = require('electron');
 
 // DOM elements
 const form = document.getElementById('devLogForm');
-const submitBtn = document.getElementById('submitBtn');
+const createBtn = document.getElementById('createBtn');
 const clearBtn = document.getElementById('clearBtn');
 const notification = document.getElementById('notification');
 const currentDateSpan = document.getElementById('currentDate');
@@ -52,8 +52,8 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
     // Show loading state
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '⏳ Creating...';
+    createBtn.disabled = true;
+    createBtn.innerHTML = 'Creating...';
     
     // Collect form data
     const formData = new FormData(form);
@@ -74,7 +74,7 @@ form.addEventListener('submit', async (e) => {
             // Show button to open folder
             setTimeout(() => {
                 const openFolderBtn = document.createElement('button');
-                openFolderBtn.textContent = '📁 Open Folder';
+                openFolderBtn.textContent = 'Open Folder';
                 openFolderBtn.className = 'btn btn-secondary';
                 openFolderBtn.onclick = () => {
                     ipcRenderer.invoke('open-file-location', result.filePath);
@@ -96,8 +96,8 @@ form.addEventListener('submit', async (e) => {
         showNotification(`Error: ${error.message}`, 'error');
     } finally {
         // Reset button state
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '✨ Create Dev Log';
+        createBtn.disabled = false;
+        createBtn.innerHTML = 'Create Dev Log';
     }
 });
 
