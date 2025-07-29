@@ -70,8 +70,25 @@ form.addEventListener('submit', async (e) => {
         
         if (result.success) {
             showNotification(result.message, 'success');
-            form.reset();
-            document.getElementById('objectives').focus();
+            
+            // Show button to open folder
+            setTimeout(() => {
+                const openFolderBtn = document.createElement('button');
+                openFolderBtn.textContent = '📁 Open Folder';
+                openFolderBtn.className = 'btn btn-secondary';
+                openFolderBtn.onclick = () => {
+                    ipcRenderer.invoke('open-file-location', result.filePath);
+                };
+                
+                notification.appendChild(openFolderBtn);
+            }, 1000);
+            
+            // Clear form after success
+            setTimeout(() => {
+                form.reset();
+                document.getElementById('objectives').focus();
+            }, 2000);
+            
         } else {
             showNotification(result.message, 'error');
         }
@@ -110,13 +127,14 @@ document.addEventListener('keydown', (e) => {
 
 // Notification system
 function showNotification(message, type = 'info') {
-    notification.textContent = message;
-    notification.className = `notification ${type} show`;
+    notification.className = `notification ${type}`;
+    notification.innerHTML = message;
+    notification.classList.remove('hidden');
     
-    // Auto hide after 3 seconds
+    // Auto hide after 5 seconds
     setTimeout(() => {
-        notification.classList.remove('show');
-    }, 3000);
+        notification.classList.add('hidden');
+    }, 5000);
 }
 
 // Auto-resize textareas
